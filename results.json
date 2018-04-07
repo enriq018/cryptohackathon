@@ -1,0 +1,27 @@
+{
+    "Pool":25,
+    "Pool Hash": "3893849583793745897cbs28329",
+    "Winners": {
+        "winner_hash_1": {
+            "percentile": "40",
+            "num_coins": 7
+        },
+        "winner_hash_2": {
+            "percentile": "95",
+            "num_coins": 7
+        },
+        "winner_hash_3": {
+            "percentile": "80",
+            "num_coins": 7
+        },
+        "winner_hash_4": {
+            "percentile": "60",
+            "num_coins": 7
+        },
+        "winner_hash_5": {
+            "percentile": "75",
+            "num_coins": 7
+        }
+    }
+    
+}
