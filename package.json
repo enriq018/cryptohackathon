@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ishdavis/cryptohackathon#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "lotion": "^0.1.17"
   }
 }
