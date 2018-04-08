@@ -1,3 +1,22 @@
-.body{
+#person{
+transition: .5s ease;
 
+}
+.teacher{
+	background-color: Fuchsia;
+	opacity: .9
+
+}
+
+.student{
+	background-color: MediumSpringGreen;
+	opacity: .9
+
+}
+
+#person:hover{
+-webkit-transform: scale(1.05);
+-ms-transform: scale(1.05);
+transform: scale(1.05);
+transition: .5s ease;
 }

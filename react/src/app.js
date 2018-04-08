@@ -6,12 +6,19 @@ class App extends React.Component {
     super();
     this.state = {
       view: 'home',
+      id: '',
     }
     this.changeView = this.changeView.bind(this);
   }
 
-  changeView(changeTo) {
-    this.setState({view: changeTo})
+
+  changeView(changeTo, id) {
+    // before changing the view, this is where the axios call
+    // to the blockchain needs to be made to get user id
+
+    // ie teachers will get courses
+    // students will get to place their scores
+    this.setState({ view: changeTo, id: id })
   }
 
   renderView() {
@@ -30,7 +37,7 @@ class App extends React.Component {
   render() {
    return (
     <div>
-      {this.renderView()}
+      { this.renderView() }
     </div>
   )}
 }
