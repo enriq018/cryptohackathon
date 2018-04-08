@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 const Login = ({ setId, submit, clicked, personType }) => (
   <div>
-    <section className="hero is-info is-fullheight">
+    <section className="hero is-info is-fullheight landing">
       <div className="hero-head">
         <h1 className="title">EDI COIN2</h1>
       </div>
