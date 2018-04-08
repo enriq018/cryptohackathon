@@ -1,16 +1,34 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { LoginContainer } from "./container/LoginContainer.js"
+import axios from "axios";
+import { LoginContainer } from "./container/LoginContainer.js";
+import { TeacherContainer } from "./container/TeacherContainer.js";
+import { get } from "http";
+import fake from "../../server/fakeStudents.js"
+
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       view: 'home',
       id: '',
+      teacherList: [],
     }
     this.changeView = this.changeView.bind(this);
+    this.getTeacherData = this.getTeacherData.bind(this);
   }
 
+  getTeacherData(id, callback) {
+    axios.get('/fake')
+      .then(response => {
+        console.log('success', response)
+        this.setState({ teacherList: response.data})
+        callback()
+      })
+      .catch((error) => {
+        console.log(error);
+    })
+  }
 
   changeView(changeTo, id) {
     // before changing the view, this is where the axios call
@@ -18,7 +36,11 @@ class App extends React.Component {
 
     // ie teachers will get courses
     // students will get to place their scores
-    this.setState({ view: changeTo, id: id })
+    if (changeTo === 'teacher') {
+      this.setState({ id: id });
+      this.getTeacherData(this.state.id, () => this.setState({ view: changeTo}))
+    }
+
   }
 
   renderView() {
@@ -30,7 +52,7 @@ class App extends React.Component {
       return <h1>STUDENT</h1>
     }
     if (view === 'teacher') {
-      return <h1>TEACHER</h1>
+      return <TeacherContainer id={ this.state.id } teacherList={ this.state.teacherList } />
     }
   }
 
