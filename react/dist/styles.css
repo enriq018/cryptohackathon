@@ -30,3 +30,8 @@ transition: .5s ease;
 transform: scale(1.05);
 transition: .5s ease;
 }
+
+.teacherView {
+	background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url('https://image.freepik.com/free-vector/vector-flat-illustration-of-an-empty-classroom-in-a-school-university-college-institute_1441-444.jpg');
+
+}
